@@ -1,0 +1,670 @@
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apon Computer Training Institute</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header section */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* লোগো এবং টেক্সটের মাঝে গ্যাপ */
+        }
+
+        .brand-container img {
+            height: 45px;
+            /* লোগোর সাইজ ছোট করা হয়েছে */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-container h1 {
+            color: #0056b3;
+            font-size: 20px;
+            /* টাইটেল সাইজ সামঞ্জস্য করা হয়েছে */
+            font-weight: 700;
+            margin: 0;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .navbar h1 {
+            color: #0056b3;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .navbar h1 img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #0056b3;
+        }
+
+        marquee {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 15px;
+            display: block;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(0, 68, 148, 0.9)), url('https://via.placeholder.com/1200x500') center/cover;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e68a00;
+        }
+
+        /* Section Layout Common Styles */
+        .section-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #0056b3;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60%;
+            height: 3px;
+            background: #0056b3;
+            position: absolute;
+            bottom: -8px;
+            left: 20%;
+        }
+
+        /* Grid Cards Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Image Box styling */
+        .img-box {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #eef5ff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .img-box img {
+            transform: scale(1.08);
+        }
+
+        .card h4 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .card .role {
+            color: #0056b3;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Gallery Section Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card p {
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        /* Facilities Section */
+        .other-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .other-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .other-info li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .other-info li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0056b3;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Contact Us section */
+        .contact {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .contact p {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="brand-container">
+                <a href="/index.html"><img src="./images/Logo1.png" alt="Company Logo"></a>
+                <h1>Apon Computer Training Institute</h1>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/aboutus.html">About Us</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/ourteam.html" class="active">Our Team</a></li>
+                <li><a href="/contactus.html">Contact Us</a></li>
+                <li><a href="/internet.html">Internet</a></li>
+            </ul>
+        </nav>
+        <marquee behavior="scroll" direction="left">ভর্তি চলছে! ভর্তি চলছে!! কম্পিউটার এর বিভিন্ন কোর্সে ভর্তি চলছে।
+            কোর্স সমুহ: কম্পিউটার অফিস এপ্লিকেশন, গ্রাফিক্স ডিজাইন, অটোক্যাড ২ডি এন্ড ৩ডি, ডিজিটাল মার্কেটিং, ওয়েব
+            ডিজাইন, হার্ডওয়ার এন্ড ট্রাবল স্যুটিং সহ বিভিন্ন কোর্সে ভর্তি চলছে। ভর্তির জন্য আজই যোগাযোগ করুন:
+            01789109626, 01705488466</marquee>
+    </header>
+
+
+    <!-- Home/Hero Section -->
+    <section id="home" class="hero">
+        <h2>Apon Computer Training Institute</h2>
+        <p>কম্পিউটার শিখুন, দক্ষ হোন এবং নিজেকে আইটি জগতে আত্মবিশ্বাসী হিসেবে গড়ে তুলুন। আমাদের রয়েছে অভিজ্ঞ প্রশিক্ষক ও
+            আধুনিক ল্যাব সুবিধা।</p>
+        <a href="#contact" class="btn">ভর্তির জন্য আজই যোগাযোগ করুন</a>
+    </section>
+
+    <!-- Managing Committee Section -->
+    <section id="committee" class="section-container">
+        <h3 class="section-title"> Managing Commetee </h3>
+        <div class="card-grid">
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Chairman"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> Mrs Nargis Rahman </h4>
+                <p class="role"> Chairman </p>
+                <p> Contact: ............. </p>
+            </div>
+
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member Secratary"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> Abdur Rahman Apon</h4>
+                <p class="role"> Member Secratary </p>
+                <p> Contact: 01712042016 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> Hashim Reza </h4>
+                <p class="role"> Member </p>
+                <p> Contact: ........... </p>
+            </div>
+
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> Md. Anisur Rahman </h4>
+                <p class="role"> Member </p>
+                <p> Contact: 01556324385 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> Md. Shahin Alom </h4>
+                <p class="role"> Member </p>
+                <p> Contact: 01789109626 </p>
+            </div>
+
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member "
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> ....... </h4>
+                <p class="role"> Member </p>
+                <p> Contact: ........ </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> ........... </h4>
+                <p class="role"> Member </p>
+                <p> Contact: ........... </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Member"
+                        onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                </div>
+                <h4> ........... </h4>
+                <p class="role"> Member </p>
+                <p> Contact: ........... </p>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Management Section -->
+    <section id="management" class="section-container">
+        <h3 class="section-title"> Managment </h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Director" alt="Executive Director"
+                        onerror="this.src='https://via.placeholder.com/150?text=Director'">
+                </div>
+                <h4> Abdur Rahman Apon </h4>
+                <p class="role"> Executive Director</p>
+                <p>মোবাইল: 01712042016</p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Director"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Md. Anisur Rahman </h4>
+                <p class="role"> Director </p>
+                <p>মোবাইল: 01556324385</p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Manager"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Md. Shahin Alom </h4>
+                <p class="role"> Manager </p>
+                <p>মোবাইল: 01789109626</p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Network Admin"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Mostafizur Rahman Kazol </h4>
+                <p class="role"> Network Admin </p>
+                <p>মোবাইল: 01910675752 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Network Admin"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Farah Tasnim Choudhury </h4>
+                <p class="role"> Office Executive </p>
+                <p>মোবাইল: 01910675752 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Network Admin"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Shariar Murad </h4>
+                <p class="role"> Office Executive </p>
+                <p>মোবাইল: 01910675752 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Network Admin"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Abdullah Hasan </h4>
+                <p class="role"> Work Assistant </p>
+                <p>মোবাইল: 01910675752 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Admin" alt="Network Admin"
+                        onerror="this.src='https://via.placeholder.com/150?text=Admin'">
+                </div>
+                <h4> Asraful Islam </h4>
+                <p class="role"> Work Assistant </p>
+                <p>মোবাইল: 01910675752 </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="section-container">
+        <h3 class="section-title"> Instructor </h3>
+        <div class="card-grid">
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Chief Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Md. Anisur Rahman </h4>
+                <p class="role"> Chief Instructor </p>
+                <p> B. Sc in CSE </p>
+                <p> Web Design &amp; AutoCAD </p>
+            </div>
+
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Senior Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Ripan Karmoker </h4>
+                <p> Diploma in Computer Technology </p>
+                <p> Senior Instructor </p>
+                <p class="role"> Graphics Design &amp; Computer Oparation 3 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Senior Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Md. Mehedi Hasan </h4>
+                <p> Diploma in Computer Technology </p>
+                <p> Senior Instructor </p>
+                <p class="role"> Graphics Design &amp; Computer Oparation 2 </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Pervin Akter </h4>
+                <p> Instructor </p>
+                <p class="role"> Graphics Design &amp; Office Application </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Busra Jannat </h4>
+                <p> Instructor </p>
+                <p class="role"> Graphics Design &amp; Office Application </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Nadim Ahmed Himel </h4>
+                <p> Instructor </p>
+                <p class="role"> Graphics Design &amp; Office Application </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Kamrul Hasan Shimul </h4>
+                <p> Senior Instructor </p>
+                <p class="role"> Digital Marketing for Freelancing </p>
+            </div>
+
+            <div class="card">
+                <div class="img-box">
+                    <img src="https://via.placeholder.com/150?text=Trainer" alt="Instructor"
+                        onerror="this.src='https://via.placeholder.com/150?text=Trainer'">
+                </div>
+                <h4> Md. Johirul Islam </h4>
+                <p> Senior Instructor </p>
+                <p class="role"> IT Support Service 3 </p>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- Other Facilities Section -->
+    <section id="facilities" class="section-container">
+        <h3 class="section-title">অন্যান্য সুযোগ-সুবিধা</h3>
+        <div class="other-info">
+            <ul>
+                <li>১:১ অনুপাতে মানসম্মত আধুনিক কম্পিউটার ও সুসজ্জিত ল্যাব সুবিধা।</li>
+                <li>সার্বক্ষণিক হাই-স্পিড ওয়াইফাই এবং পাওয়ার ব্যাকআপ সুবিধা।</li>
+                <li>দক্ষ ও অনলাইন-মার্কেটপ্লেসে অভিজ্ঞ ট্রেইনার দ্বারা প্র্যাকটিক্যাল ক্লাস।</li>
+                <li>কোর্স সম্পন্ন করার পর প্রাতিষ্ঠানিক সার্টিফিকেট ও অনলাইন ভেরিফিকেশন।</li>
+                <li>লাইফটাইম সাপোর্ট ও ফ্রিল্যান্সিং ক্যারিয়ারের জন্য বিশেষ গাইডলাইন।</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <h3>Contact Us</h3>
+        <p>কোনো তথ্য জানতে বা কোর্সে ভর্তি হতে আমাদের সাথে যোগাযোগ করুন।</p>
+        <p><strong>ঠিকানা:</strong> জ-১৭৬, কলম্বিয়া সুপার মার্কেট এর পেছনে, ওয়ারলেস গেট, মহাখালী, ঢাকা-1212, বাংলাদেশ
+        </p>
+        <p><strong>ফোন:</strong> 01712042016, 01789109626</p>
+        <p><strong>ইমেইল:</strong> aponkhan@gmail.com</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2026 Apon Computer Training Institute. All Rights Reserved.</p>
+    </footer>
+
+
+
+</body>
+
+</html>

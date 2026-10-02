@@ -1,0 +1,353 @@
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Apon Computer Training Institute </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
+        }
+
+        /* Header section */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* লোগো এবং টেক্সটের মাঝে গ্যাপ */
+        }
+
+        .brand-container img {
+            height: 45px;
+            /* লোগোর সাইজ ছোট করা হয়েছে */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-container h1 {
+            color: #0056b3;
+            font-size: 20px;
+            /* টাইটেল সাইজ সামঞ্জস্য করা হয়েছে */
+            font-weight: 700;
+            margin: 0;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .navbar h1 {
+            color: #0056b3;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .navbar h1 img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #0056b3;
+        }
+
+        /* Banner Section */
+        .page-banner {
+            background-color: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .page-banner h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-banner p {
+            font-size: 18px;
+        }
+
+        /* Main Contact Container */
+        .contact-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Info Card Section */
+        .contact-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            color: #0056b3;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* Contact Form Section */
+        .contact-form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form-container h3 {
+            font-size: 24px;
+            color: #0056b3;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #0056b3;
+        }
+
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #003d80;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="brand-container">
+                <a href="/index.html"><img src="./images/Logo1.png" alt="Company Logo"></a>
+                <h1>Apon Computer Training Institute</h1>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/aboutus.html">About Us</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/ourteam.html">Our Team</a></li>
+                <li><a href="/contactus.html" class="active">Contact Us</a></li>
+                <li><a href="/internet.html">Internet</a></li>
+            </ul>
+        </nav>
+        <marquee behavior="scroll" direction="left">ভর্তি চলছে! ভর্তি চলছে!! কম্পিউটার এর বিভিন্ন কোর্সে ভর্তি চলছে।
+            কোর্স সমুহ: কম্পিউটার অফিস এপ্লিকেশন, গ্রাফিক্স ডিজাইন, অটোক্যাড ২ডি এন্ড ৩ডি, ডিজিটাল মার্কেটিং, ওয়েব
+            ডিজাইন, হার্ডওয়ার এন্ড ট্রাবল স্যুটিং সহ বিভিন্ন কোর্সে ভর্তি চলছে। ভর্তির জন্য আজই যোগাযোগ করুন:
+            01789109626, 01705488466</marquee>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <h2>যোগাযোগ করুন (Contact Us)</h2>
+        <p>যেকোনো জিজ্ঞাসা বা পরামর্শের জন্য আমাদের সাথে সরাসরি যোগাযোগ করতে পারেন</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="contact-container">
+
+        <!-- Contact Details -->
+        <div class="contact-info">
+            <h3>আমাদের ঠিকানা ও ফোন</h3>
+
+            <div class="info-item">
+                <strong>📍 ঠিকানা:</strong>
+
+                <p> ৩১, কলম্বিয়া সুপার মার্কেট, ৩য় তলা, ওয়ারলেস গেট, মহাখালী, ঢাকা-1212, বাংলাদেশ</p>
+
+                <p> কর্পোরেট অফিস ও কম্পিউটার ল্যাব: জ-১৭৬, কলম্বিয়া সুপার মার্কেট এর পেছনে, ওয়ারলেস গেট, মহাখালী,
+                    ঢাকা-1212, বাংলাদেশ</p>
+            </div>
+
+            <div class="info-item">
+                <strong>📞 মোবাইল / ফোন:</strong>
+                <p>01712042016</p>
+                <p>01789109626</p>
+                <p>01705488466</p>
+            </div>
+
+            <div class="info-item">
+                <strong>✉️ ইমেইল:</strong>
+                <p>aponkhan@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <strong>⏰ অফিস সময়সূচী:</strong>
+                <p>প্রতিদিন সকাল ৯:০০ টা থেকে রাত ৮:০০ টা পর্যন্ত (শুক্রবার বন্ধ প্রতিষ্ঠানের নিয়ম অনুযায়ী)</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+            <h3>বার্তা পাঠান</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">আপনার নাম *</label>
+                    <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">মোবাইল নম্বর *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="০১৭XXXXXXXX" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="course">আগ্রহী কোর্স</label>
+                    <select id="course" name="course">
+                        <option value="">-- কোর্স নির্বাচন করুন --</option>
+                        <option value="office">কম্পিউটার অফিস এপ্লিকেশন</option>
+                        <option value="graphics">গ্রাফিক্স ডিজাইন</option>
+                        <option value="autocad">অটোক্যাড ২ডি এন্ড ৩ডি</option>
+                        <option value="marketing">ডিজিটাল মার্কেটিং</option>
+                        <option value="web">ওয়েব ডিজাইন</option>
+                        <option value="hardware">হার্ডওয়ার এন্ড ট্রাবল স্যুটিং</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">আপনার বার্তা / প্রশ্ন *</label>
+                    <textarea id="message" name="message" rows="4" placeholder="আপনার বার্তা লিখুন..."
+                        required=""></textarea>
+                </div>
+
+                <button type="submit" class="btn">মেসেজ পাঠান</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2026 Apon Computer Training Institute. All Rights Reserved.</p>
+    </footer>
+
+
+</body>
+
+</html>

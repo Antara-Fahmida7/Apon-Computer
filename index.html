@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://www.aponcomputer.com/index.html -->
+<html lang="bn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apon Computer Training Institute</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header section */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* লোগো এবং টেক্সটের মাঝে গ্যাপ */
+        }
+
+        .brand-container img {
+            height: 45px;
+            /* লোগোর সাইজ ছোট করা হয়েছে */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-container h1 {
+            color: #0056b3;
+            font-size: 20px;
+            /* টাইটেল সাইজ সামঞ্জস্য করা হয়েছে */
+            font-weight: 700;
+            margin: 0;
+        }
+
+
+
+        .navbar h1 {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .navbar h1 img {
+            height: 70px;
+            /* আপনার প্রয়োজন অনুযায়ী লোগোর হাইট (উচ্চতা) কম-বেশি করুন */
+            width: auto;
+            /* লোগোর অনুপাত বা রেশিও ঠিক রাখবে */
+            object-fit: contain;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar h1 {
+            color: #0056b3;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #0056b3;
+        }
+
+        /* Hero section */
+        /*.hero {
+           background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover;
+            
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }*/
+
+        .hero {
+            background-color: #1e3c72;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: #004494;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #004494;
+        }
+
+        /* About Us section */
+        .about {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        /*.about-image {
+            flex: 1;
+            background-color: #ddd;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            
+        }*/
+
+        .about-image {
+            flex: 1;
+            background-image: url('maingate.jpg');
+            /* এখানে ছবির নাম বা লিংক দিন */
+            background-size: cover;
+            /* ছবিটিকে পুরো বক্স জুড়ে ফিট করবে */
+            background-position: center;
+            /* ছবিটিকে মাঝখানে রাখবে */
+            background-repeat: no-repeat;
+            /* ছবি বারবার রিপিট হওয়া বন্ধ করবে */
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            /* ছবির ওপর লেখা স্পষ্ট করার জন্য সাদা রঙ */
+        }
+
+
+        /* Gallery section */
+        .gallery {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .gallery h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #0056b3;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background-color: #ddd;
+            height: 200px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        /* Contact Us section */
+        .contact {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .contact p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+            <h1> Apon Computer Training Institute </h1>
+
+            <div class="navbar">
+                <h1>
+                    <a href="/index.html"> <img src="./images/Logo1.png" alt="Company Logo"></a>
+                </h1>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="/index.html" class="active"> Home </a> </li>
+                <li><a href="/aboutus.html"> About Us </a></li>
+                <li><a href="/courses.html"> Courses </a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/ourteam.html"> Our Team </a></li>
+                <li><a href="/contactus.html">Contact Us</a></li>
+                <li><a href="/internet.html">Internet</a></li>
+                <!-- <li><a href="/sales&servicing.html"> Sales & Servicing </a></li> -->
+            </ul>
+        </nav>
+        <marquee behavior="scroll" direction="left"> ভর্তি চলছে! ভর্তি চলছে!! কম্পিউটার এর বিভিন্ন কোর্সে ভর্তি চলছে।
+            কোর্স সমুহ: কম্পিউটার অফিস এপ্লিকেশন, গ্রাফিক্স ডিজাইন, অটোক্যাড ২ডি এন্ড ৩ডি, ডিজিটাল মার্কেটিং, ওয়েব
+            ডিজাইন, হার্ডওয়ার এন্ড ট্রাবল স্যুটিং সহ বিভিন্ন কোর্সে ভর্তি চলছে। ভর্তির জন্য আজই যোগাযোগ করুন:
+            01789109626, 01705488466 </marquee>
+    </header>
+
+    <!-- Home/Hero Section -->
+    <section id="home" class="hero">
+        <h2>Apon Computer Training Institute</h2>
+        <p>কম্পিউটার শিখুন, দক্ষ হোন এবং নিজেকে আইটি জগতে আত্মবিশ্বাসী হিসেবে গড়ে তুলুন। আমাদের রয়েছে অভিজ্ঞ প্রশিক্ষক ও
+            আধুনিক ল্যাব সুবিধা।</p>
+        <a href="/contactus.html" class="btn"> ভর্তির জন্য আজই যোগাযোগ করুন </a>
+    </section>
+
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3>About Us</h3>
+            <p> আপন কম্পিউটার ট্রেনিং ইনস্টিটিউট বিগত কয়েক বছর ধরে অত্যন্ত সফলতার সাথে আইটি প্রশিক্ষণ প্রদান করে আসছে।
+                আমরা শিক্ষার্থীদের আধুনিক ও কর্মমুখী কম্পিউটার শিক্ষার নিশ্চয়তা প্রদান করি। আমাদের মূল লক্ষ্য হলো
+                বেকারত্ব দূরীকরণ এবং শিক্ষার্থীদের দক্ষ ফ্রিল্যান্সার ও আইটি প্রফেশনাল হিসেবে গড়ে তোলা।</p>
+        </div>
+        <div class="about-image">
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h3>Gallery</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item"> <img src="./images/Class1.jpg" alt="Girl in a jacket" width="260" height="200">
+            </div>
+            <div class="gallery-item"> <img src="./images/Class2.jpg" alt="Girl in a jacket" width="260" height="200">
+            </div>
+            <div class="gallery-item"> <img src="./images/Class3.jpg" alt="Girl in a jacket" width="260" height="200">
+            </div>
+            <div class="gallery-item"> <img src="./images/Class4.jpg" alt="Girl in a jacket" width="260" height="200">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <h3>Contact Us</h3>
+        <p>কোনো তথ্য জানতে বা কোর্সে ভর্তি হতে আমাদের সাথে যোগাযোগ করুন।</p>
+        <p><strong>ঠিকানা:</strong> জ-১৭৬, কলম্বিয়া সুপার মার্কেট এর পেছনে, ওয়ারলেস গেট, মহাখালী, ঢাকা-1212, বাংলাদেশ
+        </p>
+        <p><strong>ফোন:</strong> 01712042016, 01789109626 </p>
+        <p><strong>ইমেইল:</strong> aponkhan@gmail.com </p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2026 Apon Computer Training Institute. All Rights Reserved.</p>
+    </footer>
+
+
+
+</body>
+
+</html>

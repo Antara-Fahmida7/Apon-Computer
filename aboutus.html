@@ -1,0 +1,365 @@
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Apon Computer Training Institute</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header section */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            /* প্যাডিং কমিয়ে হেডার ছোট করা হয়েছে */
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            /* লোগো এবং টেক্সটের মাঝে গ্যাপ */
+        }
+
+        .brand-container img {
+            height: 45px;
+            /* লোগোর সাইজ ছোট করা হয়েছে */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-container h1 {
+            color: #0056b3;
+            font-size: 20px;
+            /* টাইটেল সাইজ সামঞ্জস্য করা হয়েছে */
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #0056b3;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background-color: #1e3c72;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .page-banner h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-banner p {
+            font-size: 16px;
+            color: #e0e0e0;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* About Detailed Section */
+        .about-detail {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .about-detail-text {
+            flex: 1;
+        }
+
+        .about-detail-text h3 {
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .about-detail-text p {
+            margin-bottom: 15px;
+            color: #555;
+            text-align: justify;
+        }
+
+        .about-detail-image {
+            flex: 1;
+            height: 320px;
+            background-image: url('maingate.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        /* Features / Why Choose Us Grid */
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #0056b3;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h4 {
+            font-size: 20px;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .mv-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .mv-box h3 {
+            color: #0056b3;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+
+        .mv-box p {
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Call to Action (CTA) Button */
+        .btn {
+            display: inline-block;
+            background-color: #004494;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #003370;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .about-detail {
+                flex-direction: column;
+            }
+
+            .about-detail-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="brand-container">
+                <a href="/index.html"><img src="./images/Logo1.png" alt="Company Logo"></a>
+                <h1>Apon Computer Training Institute</h1>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/aboutus.html" class="active">About Us</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/ourteam.html">Our Team</a></li>
+                <li><a href="/contactus.html">Contact Us</a></li>
+                <li><a href="/internet.html">Internet</a></li>
+            </ul>
+        </nav>
+        <marquee behavior="scroll" direction="left">ভর্তি চলছে! ভর্তি চলছে!! কম্পিউটার এর বিভিন্ন কোর্সে ভর্তি চলছে।
+            কোর্স সমুহ: কম্পিউটার অফিস এপ্লিকেশন, গ্রাফিক্স ডিজাইন, অটোক্যাড ২ডি এন্ড ৩ডি, ডিজিটাল মার্কেটিং, ওয়েব
+            ডিজাইন, হার্ডওয়ার এন্ড ট্রাবল স্যুটিং সহ বিভিন্ন কোর্সে ভর্তি চলছে। ভর্তির জন্য আজই যোগাযোগ করুন:
+            01789109626, 01705488466</marquee>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="page-banner">
+        <h2>About Us</h2>
+        <p>আমাদের সম্পর্কে বিস্তারিত জানুন এবং আপনার আইটি ক্যারিয়ার গড়ে তুলুন</p>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Detailed About Section -->
+        <section class="about-detail">
+            <div class="about-detail-text">
+                <h3>আমাদের পরিচিতি</h3>
+                <p>আপন কম্পিউটার ট্রেনিং ইনস্টিটিউট দীর্ঘদিন ধরে অত্যন্ত সফলতার সাথে মানসম্মত আইটি ও কম্পিউটার প্রশিক্ষণ
+                    প্রদান করে আসছে। মহাখালী, ঢাকায় অবস্থিত আমাদের এই প্রতিষ্ঠানটি হাজারো শিক্ষার্থীকে দক্ষ ও স্বাবলম্বী
+                    করে তুলতে গুরুত্বপূর্ণ ভূমিকা রাখছে।</p>
+                <p>আমরা বিশ্বাস করি, আধুনিক যুগে কম্পিউটার শিক্ষার কোনো বিকল্প নেই। তাই প্র্যাকটিক্যাল ক্লাসের মাধ্যমে
+                    একদম শুরু থেকে অ্যাডভান্স লেভেল পর্যন্ত বাস্তবমুখী প্রশিক্ষণ প্রদান করাই আমাদের প্রধান লক্ষ্য।</p>
+                <a href="/contactus.html" class="btn">ভর্তির জন্য যোগাযোগ করুন</a>
+            </div>
+            <div class="about-detail-image"></div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="mission-vision">
+            <div class="mv-box">
+                <h3>আমাদের লক্ষ্য (Mission)</h3>
+                <p>শিক্ষার্থীদের মানসম্মত ও যুগোপযোগী আইটি শিক্ষা প্রদান করে তাদের আন্তর্জাতিক মানের দক্ষ জনশক্তিতে
+                    রূপান্তর করা। দেশের বেকারত্ব দূরীকরণে প্রতিটি শিক্ষার্থীকে ফ্রিল্যান্সিং বা চাকরির উপযুক্ত করে গড়ে
+                    তোলা।</p>
+            </div>
+            <div class="mv-box">
+                <h3>আমাদের ভিশন (Vision)</h3>
+                <p>ডিজিটাল বাংলাদেশ ও আধুনিক বিশ্বের সাথে তাল মিলিয়ে শীর্ষস্থানীয় একটি কম্পিউটার প্রশিক্ষণ প্রতিষ্ঠান
+                    হিসেবে আত্মপ্রকাশ করা, যেখানে প্রযুক্তি শিক্ষার পাশাপাশি শতভাগ প্র্যাকটিক্যাল কাজের নিশ্চয়তা প্রদান
+                    করা হয়।</p>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <h3 class="section-title">কেন আমাদের বেছে নেবেন?</h3>
+        <section class="features-grid">
+            <div class="feature-card">
+                <h4>অভিজ্ঞ প্রশিক্ষক</h4>
+                <p>আমাদের রয়েছে শিল্পক্ষেত্রের অভিজ্ঞ ও দক্ষ মেন্টরবৃন্দ।</p>
+            </div>
+            <div class="feature-card">
+                <h4>আধুনিক কম্পিউটার ল্যাব</h4>
+                <p>সম্পূর্ণ শীতাতপ নিয়ন্ত্রিত এবং আধুনিক পিসি সমৃদ্ধ ল্যাব সুবিধা।</p>
+            </div>
+            <div class="feature-card">
+                <h4>প্র্যাকটিক্যাল ক্লাস</h4>
+                <p>তাত্ত্বিক জ্ঞানের পাশাপাশি সম্পূর্ণ প্র্যাকটিক্যাল ভিত্তিক প্রশিক্ষণ।</p>
+            </div>
+            <div class="feature-card">
+                <h4>লাইফটাইম সাপোর্ট</h4>
+                <p>কোর্স শেষেও যেকোনো প্রজেক্ট বা কাজের সমস্যায় সার্বিক সহায়তা।</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2026 Apon Computer Training Institute. All Rights Reserved.</p>
+    </footer>
+
+
+
+</body>
+
+</html>

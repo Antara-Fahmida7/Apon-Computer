@@ -323,6 +323,33 @@
             padding: 20px 0;
             margin-top: 50px;
         }
+
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .about-detail {
+                flex-direction: column;
+            }
+
+            .about-detail-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 
